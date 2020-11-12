@@ -4,21 +4,26 @@ using namespace std;
 #define ll long long
 #define ar array
 
-int n, a[100000];
+int n;
+string s;
 
 void solve() {
 	cin >> n;
-  for (size_t i = 0; i < n-1; i++) {
-    /* code */
-    cin >> a[i];
-  }
+  cin >> s;
+	int ans = int(1e9);
+	for (size_t i = 0; i < 2; i++) {
+		string temp;
+		temp = string(1, '0' + i) + s + string(1, '1' - i);
+		int ansTemp = 0;
+		for (size_t j = 0; j < temp.size()-1; j++) {
+			if (temp[j] == temp[j+1]) {
+				ansTemp += 1;
+			}
+		}
 
-  for (size_t i = 0; i < n-2; i++) {
-    if (a[i] == a[i+1]) {
-      /* code */
-      
-    }
-  }
+		ans = min(ans, ansTemp / 2);
+	}
+  cout << ans << endl;
 }
 
 int main() {
