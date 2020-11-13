@@ -12,10 +12,14 @@ int main() {
 
 	cin >> n;
 
-  int numerator = 0
+  ll factorial = 1;
 
-  for (size_t i = 0; i < count; i++) {
-    /* code */
+  for (size_t i = 0; i < n; i++) {
+    factorial = factorial * (i+1);
   }
+
+  ll ans = factorial *2 / (n*n);
+
+  cout << ans << endl;
 
 }
